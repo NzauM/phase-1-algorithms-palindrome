@@ -1,20 +1,40 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  const wordLength = word.length
+  let reverseWord = []
+  for(let i=0; i < wordLength; i++){
+      reverseWord.unshift(word[i])
+  }
+  console.log(reverseWord)
+  const finalWord = reverseWord.join('')
+  let palindrome;
+  if (finalWord === word){
+    palindrome = true
+  }
+  else{
+    palindrome = false
+  }
+  console.log(palindrome)
+  return palindrome
 }
 
 /* 
-  Add your pseudocode here
+  Get a reverse of the given string
+  check if the reverse string matches the original string
+  Return true if it does, and false if otherwise
 */
 
 /*
-  Add written explanation of your solution here
+  Loop through the string 
+  Add string characters to an array in a reverse order(unshift)
+  Join the array to come up with a reverse string
+  Compare reverse string to original string
 */
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
   // add your own custom tests in here
-  console.log("Expecting: true");
-  console.log("=>", isPalindrome("racecar"));
+  console.log("Expecting: some trash");
+  console.log(isPalindrome("racecar"));
 
   console.log("");
 
@@ -23,3 +43,4 @@ if (require.main === module) {
 }
 
 module.exports = isPalindrome;
+// isPalindrome()
